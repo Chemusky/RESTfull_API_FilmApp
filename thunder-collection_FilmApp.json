@@ -1,0 +1,37 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "FilmApp",
+    "dateExported": "2024-01-08T19:25:48.654Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "c3ad24c3-62eb-449f-94a7-bdca43b4f035",
+            "colId": "19593afb-6b1c-4216-a23b-03bb284cfc15",
+            "containerId": "",
+            "name": "Obtener todas las pelis",
+            "url": "http://localhost:3000/movies/659c432a95328fb0720fd309",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-01-08T18:54:24.445Z",
+            "modified": "2024-01-08T19:05:36.951Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d5c95d00-a7b3-4298-ad54-b713b144822e",
+            "colId": "19593afb-6b1c-4216-a23b-03bb284cfc15",
+            "containerId": "",
+            "name": "Obtener por id",
+            "url": "http://localhost:3000/movies/659c432a95328fb0720fd309",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-01-08T19:14:21.175Z",
+            "modified": "2024-01-08T19:14:21.175Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
