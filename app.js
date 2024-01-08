@@ -2,6 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const PORT = 3000;
 
+// se importa la ruta para poder generar el endpoint
+const movieRouter = require("./router/movieRoutes");
+
 const app = express();
 app.use(express.json());
 
@@ -24,6 +27,9 @@ db.on("disconnected", () => {
   console.log(`Mongo ha sido desconectado`); // comprobamos si se ha desconectado
 });
 /**********************************************************************************************************/
+
+// le damos uso a las rutas importadas
+app.use("/movies", movieRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost${PORT}`);
