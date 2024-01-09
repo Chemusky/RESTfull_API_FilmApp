@@ -4,6 +4,7 @@ const PORT = 3000;
 
 // se importa la ruta para poder generar el endpoint
 const movieRouter = require("./router/movieRoutes");
+const userRouter = require("./router/userRoutes");
 
 const app = express();
 app.use(express.json());
@@ -30,6 +31,7 @@ db.on("disconnected", () => {
 
 // le damos uso a las rutas importadas
 app.use("/movies", movieRouter);
+app.use("/users", userRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost${PORT}`);

@@ -8,7 +8,7 @@ const generateToken = (user, isRefreshToken) => {
       expiresIn: "60m",
     });
   }
-  return jwt.sign(user, process.env.TOKEN_SECRET, { expiresIn: "15m" });
+  return jwt.sign(user, process.env.TOKEN_SECRET, { expiresIn: "60m" });
 };
 
 module.exports = { generateToken };

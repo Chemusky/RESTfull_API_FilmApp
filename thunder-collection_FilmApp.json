@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "FilmApp",
-    "dateExported": "2024-01-08T19:25:48.654Z",
+    "dateExported": "2024-01-09T19:10:59.990Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -10,11 +10,11 @@
             "colId": "19593afb-6b1c-4216-a23b-03bb284cfc15",
             "containerId": "",
             "name": "Obtener todas las pelis",
-            "url": "http://localhost:3000/movies/659c432a95328fb0720fd309",
+            "url": "http://localhost:3000/movies/",
             "method": "GET",
             "sortNum": 10000,
             "created": "2024-01-08T18:54:24.445Z",
-            "modified": "2024-01-08T19:05:36.951Z",
+            "modified": "2024-01-09T15:31:19.725Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -30,6 +30,91 @@
             "created": "2024-01-08T19:14:21.175Z",
             "modified": "2024-01-08T19:14:21.175Z",
             "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2567d70b-d863-440f-aed5-cdd6e9f4c0b5",
+            "colId": "19593afb-6b1c-4216-a23b-03bb284cfc15",
+            "containerId": "",
+            "name": "Obtener las últimas 10 películas",
+            "url": "http://localhost:3000/movies/recent_movies",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-01-09T16:04:46.915Z",
+            "modified": "2024-01-09T16:04:46.915Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8ec375e3-ad7b-44d5-a58f-0c017a10e52e",
+            "colId": "19593afb-6b1c-4216-a23b-03bb284cfc15",
+            "containerId": "",
+            "name": "Obtener las 10 películas mejor valoradas",
+            "url": "http://localhost:3000/movies/most_popular",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-01-09T16:18:01.394Z",
+            "modified": "2024-01-09T16:18:01.394Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8026068a-6405-416b-9cb5-38d81ce444cc",
+            "colId": "19593afb-6b1c-4216-a23b-03bb284cfc15",
+            "containerId": "",
+            "name": "Registro de Usuario",
+            "url": "http://localhost:3000/users/signup",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-01-09T16:37:29.523Z",
+            "modified": "2024-01-09T16:37:29.523Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"JM\",\n  \"email\": \"jm@gmail.com\",\n  \"password\": \"123456789\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e8db4b80-fc1f-4a58-b2a8-736544776560",
+            "colId": "19593afb-6b1c-4216-a23b-03bb284cfc15",
+            "containerId": "",
+            "name": "Inicio de Sesión",
+            "url": "http://localhost:3000/users/login",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-01-09T17:39:11.171Z",
+            "modified": "2024-01-09T17:39:11.171Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"jm@gmail.com\",\n  \"password\": \"123456789\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e7ec430d-e6a5-4260-8f03-0bd4505508dc",
+            "colId": "19593afb-6b1c-4216-a23b-03bb284cfc15",
+            "containerId": "",
+            "name": "Añadir película a favoritos",
+            "url": "http://localhost:3000/users/user/659c432a95328fb0720fd30e/favorite",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-01-09T18:19:23.661Z",
+            "modified": "2024-01-09T18:22:41.094Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQ3NWVmYWM3ZTFjOGQxMmQ0NDEwMyIsImVtYWlsIjoiam1AZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MDQ4MjQxNzYsImV4cCI6MTcwNDgyNzc3Nn0.AehSHqkL6i1IcQeJ__XOSwgf4ghCyT6TSTLm09Ry4LA"
+                }
+            ],
             "params": [],
             "tests": []
         }
