@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "FilmApp",
-    "dateExported": "2024-01-09T19:10:59.990Z",
+    "dateExported": "2024-01-10T18:44:17.528Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -70,12 +70,12 @@
             "method": "POST",
             "sortNum": 50000,
             "created": "2024-01-09T16:37:29.523Z",
-            "modified": "2024-01-09T16:37:29.523Z",
+            "modified": "2024-01-10T18:12:15.469Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"JM\",\n  \"email\": \"jm@gmail.com\",\n  \"password\": \"123456789\"\n}",
+                "raw": "{\n  \"name\": \"JM Master Of Metal\",\n  \"email\": \"jmmaster@gmail.com\",\n  \"password\": \"123456789\",\n  \"role\": \"admin\"\n}",
                 "form": []
             },
             "tests": []
@@ -89,12 +89,12 @@
             "method": "POST",
             "sortNum": 60000,
             "created": "2024-01-09T17:39:11.171Z",
-            "modified": "2024-01-09T17:39:11.171Z",
+            "modified": "2024-01-10T18:14:29.048Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"email\": \"jm@gmail.com\",\n  \"password\": \"123456789\"\n}",
+                "raw": "{\n  \"email\": \"jmmaster@gmail.com\",\n  \"password\": \"123456789\"\n}",
                 "form": []
             },
             "tests": []
@@ -104,15 +104,53 @@
             "colId": "19593afb-6b1c-4216-a23b-03bb284cfc15",
             "containerId": "",
             "name": "Añadir película a favoritos",
-            "url": "http://localhost:3000/users/user/659c432a95328fb0720fd30e/favorite",
+            "url": "http://localhost:3000/users/659c432a95328fb0720fd309/addFavorite",
             "method": "POST",
             "sortNum": 70000,
             "created": "2024-01-09T18:19:23.661Z",
-            "modified": "2024-01-09T18:22:41.094Z",
+            "modified": "2024-01-10T16:20:52.749Z",
             "headers": [
                 {
                     "name": "auth-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQ3NWVmYWM3ZTFjOGQxMmQ0NDEwMyIsImVtYWlsIjoiam1AZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MDQ4MjQxNzYsImV4cCI6MTcwNDgyNzc3Nn0.AehSHqkL6i1IcQeJ__XOSwgf4ghCyT6TSTLm09Ry4LA"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQ3NWVmYWM3ZTFjOGQxMmQ0NDEwMyIsImVtYWlsIjoiam1AZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MDQ5MDM1MTQsImV4cCI6MTcwNDkwNzExNH0.E7HutfwzHDzkokau9bPX9gOtfUC39z_DsoFXdtsFgm0"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7cbed209-c385-45e9-b261-299a175a3a77",
+            "colId": "19593afb-6b1c-4216-a23b-03bb284cfc15",
+            "containerId": "",
+            "name": "Obtener las pelis favoritas del usuario logeado",
+            "url": "http://localhost:3000/users/user/favorite",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-01-10T15:35:41.375Z",
+            "modified": "2024-01-10T15:35:41.375Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQ3NWVmYWM3ZTFjOGQxMmQ0NDEwMyIsImVtYWlsIjoiam1AZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MDQ5MDA1NDAsImV4cCI6MTcwNDkwNDE0MH0.k9QtFyWhp81sXA5tx7ZGZ44V43ftiUDI0iTEW7vRcYw"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0eef0ba0-7c98-4f8c-b22e-a2ef5179f4f3",
+            "colId": "19593afb-6b1c-4216-a23b-03bb284cfc15",
+            "containerId": "",
+            "name": "Eliminar película de favoritos",
+            "url": "http://localhost:3000/users/659c432a95328fb0720fd309/deleteFavorite",
+            "method": "DELETE",
+            "sortNum": 90000,
+            "created": "2024-01-10T16:09:37.851Z",
+            "modified": "2024-01-10T16:19:35.981Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQ3NWVmYWM3ZTFjOGQxMmQ0NDEwMyIsImVtYWlsIjoiam1AZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MDQ5MDI2ODIsImV4cCI6MTcwNDkwNjI4Mn0.CJ-1u6llsv9RLj5CFcOF_s_xfpqEz-A-_lA0D-jcV6g"
                 }
             ],
             "params": [],

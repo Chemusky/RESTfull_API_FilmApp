@@ -5,6 +5,8 @@ const { generateToken } = require("../utils/utils");
 
 // Registro de Usuario
 // Una vez desarrollado el controlado de creación de usuario, en el thunder client en el body se añade el nombre, email y password (constraseña: 123456789)
+// si quiero crear un usuario con rol de admin lo tengo que especificar en el thunder client
+// porque por defecto se crea con el rol user
 const signup = async (req, res) => {
   try {
     const newUser = new UserModel({
@@ -135,26 +137,59 @@ const addFavouritesMovies = async (req, res) => {
   }
 };
 
+//borrar las películas de favoritos
+const deleteFavouritesMovies = async (req, res) => {
+  try {
+    const movieId = req.params.id;
+
+    const userId = req.user.id;
+    const user = await UserModel.findById(userId);
+    if (!user) {
+      return res.status(404).json({ error: "Usuario no encontrado " });
+    }
+
+    const indexOfMovieId = user.favorites.indexOf(movieId);
+
+    if (indexOfMovieId === -1) {
+      return res.status(404).json({
+        status: "Error",
+        message: "Película no encontrada en favoritos",
+      });
+    }
+
+    user.favorites.splice(indexOfMovieId, 1);
+    await user.save();
+    res.status(200).json({ error: "La película se ha eliminado de favoritos" });
+  } catch (error) {
+    res.status(500).json({
+      error: "Error al eliminar la peli de favoritos",
+      message: error.message,
+    });
+  }
+};
+
 // obtener las películas favoritas del usuario logeado
 const getFavouritesMovies = async (req, res) => {
   try {
     const userId = req.user.id;
     const user = await UserModel.findById(userId);
     if (!user) {
-      return res.status(404).json({ error: "Usuario no encontrado" });
+      return res.status(404).json({ error: "Usuario no encontrado " });
     }
-    console.log(user.favorites); //para que me funcione el console.log se necesita ejecutar este controlador en el thunderclient
+
     const listMovie = [];
+
     for (const movieId of user.favorites) {
       const favorite = await MovieModel.findById(movieId);
-      listMovie.push(favorite.title);
+      console.log(favorite);
+      if (favorite) {
+        listMovie.push(favorite.title);
+      }
     }
-    res
-      .status(200)
-      .json({ error: "Se han obtenido las pelis favoritas con éxito" });
+    res.status(200).json({ data: listMovie });
   } catch (error) {
     res.status(500).json({
-      error: "Error al obtener el listado de tus películas favoritas",
+      error: "Error al buscar los favoritos",
       message: error.message,
     });
   }
@@ -166,4 +201,5 @@ module.exports = {
   refreshToken,
   addFavouritesMovies,
   getFavouritesMovies,
+  deleteFavouritesMovies,
 };

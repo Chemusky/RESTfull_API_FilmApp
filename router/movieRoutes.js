@@ -11,6 +11,8 @@ const router = require("express").Router();
 // LAS COMPUESTAS SON LAS QUE TIENEN EL ID
 // TENER EN CUENTA QUE AL EMPEZAR A LEER EL CÓDIGO EMPIEZA DE ARRIBA A ABAJO
 
+//Añadir la ruta referente a añadir una película. Le pongo el middleware verifyAdmin para que solo de permiso a los administradores
+
 router.get("/", getMovies);
 router.get("/recent_movies", getRecentMovies);
 router.get("/most_popular", getPopularMovies);

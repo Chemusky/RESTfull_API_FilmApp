@@ -8,9 +8,6 @@
   "role": "user",
   "favorites": [
     {
-      "$oid": "659c432a95328fb0720fd309"
-    },
-    {
       "$oid": "659c432a95328fb0720fd30a"
     },
     {
@@ -21,7 +18,27 @@
     },
     {
       "$oid": "659c432a95328fb0720fd30e"
+    },
+    {
+      "$oid": "659c432a95328fb0720fd309"
+    },
+    {
+      "$oid": "659c432a95328fb0720fd309"
+    },
+    {
+      "$oid": "659c432a95328fb0720fd309"
     }
   ],
-  "__v": 5
+  "__v": 11
+},
+{
+  "_id": {
+    "$oid": "659eddff8381ba6ca5ec25b1"
+  },
+  "name": "JM Master Of Metal",
+  "email": "jmmaster@gmail.com",
+  "password": "$2b$10$mB0GokjedkeIqTpb.qHQaOZ.1cKfwmsAsCxtbmJTzFYgn.aWr8nQq",
+  "role": "admin",
+  "favorites": [],
+  "__v": 0
 }]
