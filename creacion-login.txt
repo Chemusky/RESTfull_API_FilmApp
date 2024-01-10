@@ -1,0 +1,42 @@
+Instalar la librería bcrypt npm install bcrypt. Hacer la encriptación de la contraseña
+se crea el modelo (archivo loginModels) y se exporta
+se importa en el archivo loginControllers, se desarrolla su controlador (referente al registro de usuarios e inicio de sesión)
+y se exporta
+Se importa el el archivo loginRoutes y se establece su router para exportarlos
+Se importa en el archivo app.js
+
+
+
+
+Generar token (un montón de números y letras)
+Destacar que se va a usar JSON WEB TOKEN (JWT). Se instala su libreria con npm i npm install jsonwebtoken
+Se divide en: 
+HEADER: La configuracion que tiene el algoritmo (alg) y el type que es JWT
+PAYLOAD: Donde se guarda la información encriptada del individuo. Se guarda el nombre, rol y el iat (la hora a 
+la que se creó ese token)
+SIGNATURE: Firma del token.
+Lo primero es instalar la libreria y antes de generar el token hay que generar la firma del token. Se hace en otro
+archivo que finalmente se borra o se guarda en el .gitignore. Se guarda en ese archivo la info de la palabra clave para
+poder acceder a nuestro endpoint. El hash que se genera luego se guarda en el fichero de parámetros (.env)
+Pasos para generar token (El paso 3 es una buena práctica ya que se crea una carpeta y un archivo con el mismo nombre):
+1ºsecret.js
+2º.env
+3ºSe crea la carpeta utils con el archivo utils. Importamos librería jsonwebtoken y se exporta la función creada en este archivo llamada generateToken
+En este archivo utils se crea el token; una vez que se ha validado el usuario y la contraseña (en el controlador referente al incio de sesión, etc)
+4ºloginControllers (ir a la función login). Se importa la función generateToken
+Después de estos pasos, hay que generar el middleware. Es como un proceso que se ejecuta entre la llamada a tu endpoint y nuestra función
+Se crea la carpeta middleware y un archivo llamado auth.js y se crea una función llamada verifyToken
+
+
+
+
+
+Flujo de Utilización de Tokens y Refresh Tokens (Esto nos lo pasó ivan por el chat):
+El usuario se autentica y recibe un token de acceso y un refresh token.
+El token de acceso se usa para acceder a recursos protegidos.
+Cuando el token de acceso expira, se usa el refresh token para obtener un nuevo token de acceso sin requerir credenciales.
+Este proceso se repite hasta que el refresh token también expire o sea revocado.
+En ese momento, el usuario debe volver a autenticarse para obtener nuevos tokens.
+
+
+
